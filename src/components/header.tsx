@@ -26,7 +26,7 @@ export default function Header() {
             </li>
             <li>
               <a
-                onClick={() => openLink("#")}
+                onClick={() => openLink("https://github.com/ismaelhtmljs/memobox")}
                 className="cursor-pointer hover-a-repo text-white"
               >
                 Repositorio
