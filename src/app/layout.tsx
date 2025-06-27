@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "MemoBox",
   description:
-    "DataSafe, lugar donde puedes guardar tus cosas con mucha privacidad",
+    "MemoBox, lugar donde puedes escribir y guardar tus cosas con mucha privacidad",
 };
 
 export default function RootLayout({
