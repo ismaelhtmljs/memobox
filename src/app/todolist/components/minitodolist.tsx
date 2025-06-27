@@ -51,7 +51,7 @@ export default function MiniTodoList() {
         </div>
         {/* donde se va a añadir la lista */}
         <div className="p-1.5 overflow-auto bg-[#bee1ff] shadow rounded">
-          <div className="overflow-y-auto h-[146px] p-2.5 w-[425px]">
+          <div className="overflow-y-auto h-[146px] p-2.5 w-[421px]">
             {list.map((lista, i) => (
               <ul key={i}>
                 <li>
