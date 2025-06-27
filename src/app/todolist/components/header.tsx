@@ -18,7 +18,7 @@ export default function Headertodolist() {
           </h1>
         </div>
         <nav>
-          <ul className="flex gap-5 items-center text-[15px]">
+          <ul className="flex gap-5 items-center text-[15px] w-max ul-res-header">
             <li>
               <a
                 onClick={() => openLink("https://github.com/ismaelhtmljs")}

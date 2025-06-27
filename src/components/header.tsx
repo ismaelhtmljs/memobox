@@ -7,7 +7,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-moded p-moded text-mod ">
+    <header className="bg-moded p-moded text-mod sticky top-0 z-50">
       <div className="p-1.5 flex justify-around items-center h-res">
         <div className="flex gap-2.5 items-center">
           <h1 className="text-[20px]">

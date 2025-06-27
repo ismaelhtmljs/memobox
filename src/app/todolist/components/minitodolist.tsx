@@ -31,7 +31,7 @@ export default function MiniTodoList() {
   return (
     <>
       <div>
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2.5 minitodolist-conteiner-titulo-res">
           <div>
             <input
               type="text"
@@ -44,18 +44,18 @@ export default function MiniTodoList() {
           <button
             type="button"
             onClick={CreateList}
-            className="bg-green-400 p-2 rounded cursor-pointer hover:bg-green-800 text-white"
+            className="bg-green-400 p-2 rounded cursor-pointer hover:bg-green-800 text-white minitodolist-input-w-res"
           >
             Añadir
           </button>
         </div>
         {/* donde se va a añadir la lista */}
         <div className="p-1.5 overflow-auto bg-[#bee1ff] shadow rounded">
-          <div className="overflow-y-auto h-[146px] p-2.5 w-[421px]">
+          <div className="overflow-y-auto h-[146px] p-2.5 w-[421px] minitodolist-res-w">
             {list.map((lista, i) => (
               <ul key={i}>
                 <li>
-                  <p className="flex items-center justify-between break-all">
+                  <p className="flex items-center justify-between">
                     {lista}
                     <span
                       className="bg-red-500 p-1.5 rounded cursor-pointer hover:bg-red-800"

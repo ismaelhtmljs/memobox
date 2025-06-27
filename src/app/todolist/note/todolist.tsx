@@ -60,9 +60,9 @@ export default function TodolistContent() {
   };
 
   return (
-    <div className="p-2.5 w-full mt-5">
+    <div className="p-2.5 w-full mt-5 todolist-conteiner-res">
       {/*  */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center todolist-titulo-memobox">
         <div>
           <h2 className="text-3xl font-bold">📝 Mis Listas</h2>
         </div>
@@ -87,10 +87,10 @@ export default function TodolistContent() {
       )}
       <div>
         {/* contendor de las listas */}
-        <div className="flex p-2.5 gap-[25px] flex-wrap">
+        <div className="flex p-2.5 gap-[25px] flex-wrap p-res-conteiner-lista">
           {/* creacion de un note-pad */}
           {Note_pad.map((lista, i) => (
-            <div key={i} className="p-4 bg-white shadow w-[303px] h-fit">
+            <div key={i} className="p-4 bg-white shadow h-fit">
               <div
                 className={`p-2.5 flex gap-2.5 ${
                   lista.titulo.length > 15
@@ -128,15 +128,15 @@ export default function TodolistContent() {
 
           {/* creacion de una todo list */}
           {To_do_list.map((todolist, n) => (
-            <div key={n} className="p-4 bg-white shadow h-fit">
+            <div key={n} className="p-4 bg-white shadow h-fit todolist-conteiner-total-w">
               <div className="p-2.5 flex flex-col">
-                <div className="flex items-center gap-2.5 justify-between">
+                <div className="flex items-center gap-2.5 justify-between minitodolist-res-titulo">
                   <h3 className="text-2xl">
                     <strong>{todolist.titulo_list}</strong>
                   </h3>
                   <button
                     type="button"
-                    className="p-[5px] bg-red-500 rounded text-white cursor-pointer hover:bg-red-800"
+                    className="p-[5px] bg-red-500 rounded text-white cursor-pointer hover:bg-red-800 bton-delete-todolist-res"
                     onClick={() => DeleteTodoList(n)}
                   >
                     eliminar
