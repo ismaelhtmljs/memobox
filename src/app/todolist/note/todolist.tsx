@@ -9,7 +9,9 @@ export default function TodolistContent() {
 
   const [isModalOpen, SetisModalOpen] = useState(false);
 
-  const [Note_pad, SetNotePad] = useState<{ titulo: string, contenido: string }[]>(() => {
+  const [Note_pad, SetNotePad] = useState<
+    { titulo: string; contenido: string }[]
+  >(() => {
     if (typeof window !== "undefined") {
       const guardado = localStorage.getItem("memoboxNotePads");
       return guardado ? JSON.parse(guardado) : [];
@@ -40,10 +42,10 @@ export default function TodolistContent() {
   };
 
   const UpdateNotePadContent = (index: number, contenido: string) => {
-    const Actualizar = [...Note_pad]
+    const Actualizar = [...Note_pad];
     Actualizar[index].contenido = contenido;
-    SetNotePad(Actualizar)
-  }
+    SetNotePad(Actualizar);
+  };
 
   const DeleteNotePad = (index: number) => {
     const eliminar = Note_pad.filter((_, i) => i !== index);
@@ -128,10 +130,19 @@ export default function TodolistContent() {
 
           {/* creacion de una todo list */}
           {To_do_list.map((todolist, n) => (
-            <div key={n} className="p-4 bg-white shadow h-fit todolist-conteiner-total-w">
+            <div
+              key={n}
+              className="p-4 bg-white shadow h-fit todolist-conteiner-total-w"
+            >
               <div className="p-2.5 flex flex-col">
                 <div className="flex items-center gap-2.5 justify-between minitodolist-res-titulo">
-                  <h3 className="text-2xl">
+                  <h3
+                    className={`text-2xl ${
+                      todolist.titulo_list.length > 17
+                        ? "break-all text-xl"
+                        : ""
+                    }`}
+                  >
                     <strong>{todolist.titulo_list}</strong>
                   </h3>
                   <button

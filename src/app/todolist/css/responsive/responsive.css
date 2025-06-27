@@ -259,3 +259,57 @@
     text-align: center;
   }
 }
+
+@media only screen and (min-width: 750px) and (max-width: 768px){
+  .h-res{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bton-delete-todolist-res{
+    width: fit-content;
+  }
+  .minitodolist-res-w{
+    width: auto;
+  }
+  .todolist-conteiner-res{
+    padding: 0px;
+  }
+  .minitodolist-input-w-res{
+    width: fit-content;
+  }
+  .todolist-titulo-memobox{
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .text-aling-res{
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+  .h-res{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bton-delete-todolist-res{
+    width: fit-content;
+  }
+  .minitodolist-res-w{
+    width: auto;
+  }
+  .todolist-conteiner-res{
+    padding: 0px;
+  }
+  .minitodolist-input-w-res{
+    width: fit-content;
+  }
+  .todolist-titulo-memobox{
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .text-aling-res{
+    text-align: center;
+  }
+}
