@@ -89,14 +89,18 @@ export default function TodolistContent() {
       )}
       <div>
         {/* contendor de las listas */}
-        <div className="flex p-2.5 gap-[25px] flex-wrap p-res-conteiner-lista">
+        <div className="grid p-2.5 gap-[25px] p-res-conteiner-lista grid-res">
           {/* creacion de un note-pad */}
           {Note_pad.map((lista, i) => (
-            <div key={i} className="p-4 bg-white shadow h-fit">
+            <div
+              key={i}
+              className="p-4 bg-white shadow h-fit w-res-block"
+              id="note-pad"
+            >
               <div
-                className={`p-2.5 flex gap-2.5 ${
+                className={`p-2.5 flex gap-2.5 block-titulo-res ${
                   lista.titulo.length > 15
-                    ? "flex-col items-start"
+                    ? "items-start"
                     : "justify-between items-center"
                 }`}
               >
@@ -133,12 +137,13 @@ export default function TodolistContent() {
             <div
               key={n}
               className="p-4 bg-white shadow h-fit todolist-conteiner-total-w"
+              id="todolist"
             >
               <div className="p-2.5 flex flex-col">
                 <div className="flex items-center gap-2.5 justify-between minitodolist-res-titulo">
                   <h3
                     className={`text-2xl ${
-                      todolist.titulo_list.length > 17
+                      todolist.titulo_list.length > 14
                         ? "break-all text-xl"
                         : ""
                     }`}

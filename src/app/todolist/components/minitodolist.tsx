@@ -38,7 +38,7 @@ export default function MiniTodoList() {
               name="OPALJNX"
               value={input}
               onChange={(e) => Setinput(e.target.value)}
-              className="border rounded p-2 mt-2 mb-2"
+              className="border rounded p-2 mt-2 mb-2 minitodolist-input-w"
             />
           </div>
           <button
