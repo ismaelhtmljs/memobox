@@ -108,7 +108,7 @@ export default function TodolistContent() {
                 <div>
                   <button
                     type="button"
-                    className="p-[5px] bg-red-500 rounded text-white cursor-pointer"
+                    className="p-[5px] bg-red-500 rounded text-white cursor-pointer hover:bg-red-800"
                     onClick={() => DeleteNotePad(i)}
                   >
                     eliminar
@@ -136,7 +136,7 @@ export default function TodolistContent() {
                   </h3>
                   <button
                     type="button"
-                    className="p-[5px] bg-red-500 rounded text-white cursor-pointer"
+                    className="p-[5px] bg-red-500 rounded text-white cursor-pointer hover:bg-red-800"
                     onClick={() => DeleteTodoList(n)}
                   >
                     eliminar

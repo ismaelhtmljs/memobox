@@ -58,7 +58,7 @@ export default function MiniTodoList() {
                   <p className="flex items-center justify-between break-all">
                     {lista}
                     <span
-                      className="bg-red-500 p-1.5 rounded cursor-pointer"
+                      className="bg-red-500 p-1.5 rounded cursor-pointer hover:bg-red-800"
                       onClick={() => DeleteList(i)}
                     >
                       🗑️
