@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📦 MemoBox
 
-## Getting Started
+## 🇪🇸 Español
 
-First, run the development server:
+**MemoBox** es una aplicación web de productividad diseñada para ayudarte a organizar tus ideas, tareas y notas personales de forma rápida, accesible y visualmente atractiva. Es ideal para estudiantes, programadores, creativos o cualquier persona que necesite un espacio para anotar sus pensamientos o gestionar listas de tareas.
+
+Con un diseño limpio y moderno, MemoBox ofrece una interfaz intuitiva donde puedes crear listas personalizadas o escribir notas en un bloc privado. Además, incluye funciones como modo claro/oscuro, una experiencia responsiva en dispositivos móviles, y una base de datos local sin necesidad de crear cuentas.
+
+### 🌐 Tecnologías utilizadas
+
+- **Next.js** – Framework React para desarrollo rápido y eficiente.
+- **Tailwind CSS** – Estilos modernos y adaptativos con clases utilitarias.
+- **Google Fonts** – Tipografías personalizadas para mejorar la estética.
+- **Vercel** – Hosting moderno y optimizado para apps Next.js.
+
+---
+
+## 🖼️ Vista previa de MemoBox
+
+![Vista previa 1](/public/img/memobox_pag1.png)
+
+---
+
+## 🚀 Características
+
+- ✅ Crear listas de tareas o blocs de notas privados.
+- 🎨 Cambiar entre modo claro y oscuro fácilmente.
+- 💾 Guardado automático en `localStorage` del navegador.
+- 🔎 Buscador web integrado.
+- 📢 Sistema de alertas emergentes (pop alerts).
+- 📱 Adaptado para dispositivos móviles y tablets.
+- 🛠️ Sistema modular preparado para futuras actualizaciones.
+
+---
+
+## 🧪 En desarrollo...
+
+- Configuración avanzada para cambiar fuentes y tamaños.
+- Sección de noticias con changelogs.
+- Exportación de notas.
+- Subida de imágenes a notas.
+
+---
+
+## ▶️ ¡Probar ahora!
+
+Haz clic en el botón para acceder a la aplicación:
+
+👉 [**Entrar a MemoBox**](https://memobox-beta.vercel.app/)
+
+---
+
+## 🖼️ Tema oscuro activo
+
+![Vista previa 2](/public/img/memobox_pag2_dark.png)
+
+---
+
+## 📥 Instalación local (opcional)
+
+````bash
+git clone https://github.com/ismaelhtmljs/memobox
+cd memobox
+npm install
+npm run dev
+
+## 🇺🇸 English
+
+**MemoBox** is a productivity web app designed to help you organize your ideas, tasks, and personal notes quickly, accessibly, and with a modern visual style. It's perfect for students, developers, creatives, or anyone who needs a space to jot down thoughts or manage task lists.
+
+With a clean and modern interface, MemoBox provides an intuitive space where you can create custom to-do lists or write notes in a private notepad. It includes features like light/dark mode, responsive design for mobile devices, and local storage with no account needed.
+
+### 🌐 Technologies Used
+
+- **Next.js** – React framework for fast and efficient development.
+- **Tailwind CSS** – Utility-first modern styling for responsive design.
+- **Google Fonts** – Custom fonts to enhance the visual aesthetic.
+- **Vercel** – Modern hosting optimized for Next.js applications.
+
+---
+
+## 🖼️ MemoBox Preview
+
+![Preview 1](/public/img/memobox_pag1.png)
+
+---
+
+## 🚀 Features
+
+- ✅ Create to-do lists or private notes.
+- 🎨 Easily toggle between light and dark modes.
+- 💾 Automatic saving to browser `localStorage`.
+- 🔎 Built-in web search bar.
+- 📢 Popup alert system (non-intrusive).
+- 📱 Mobile and tablet friendly.
+- 🛠️ Modular system ready for future updates.
+
+---
+
+## 🧪 In Development...
+
+- Advanced settings to customize fonts and sizes.
+- News section with changelogs.
+- Note exporting.
+- Image upload for notes.
+
+---
+
+## ▶️ Try It Now!
+
+Click the button below to access the app:
+
+👉 [**Enter MemoBox**](https://memobox-beta.vercel.app/)
+
+---
+
+## 🌑 Dark Mode Preview
+
+![Preview 2](/public/img/memobox_pag2_dark.png)
+
+---
+
+## 📥 Local Installation (Optional)
 
 ```bash
+git clone https://github.com/ismaelhtmljs/memobox
+cd memobox
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+````
