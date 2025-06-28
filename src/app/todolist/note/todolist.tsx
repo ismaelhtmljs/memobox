@@ -162,7 +162,7 @@ export default function TodolistContent() {
               </div>
 
               {/* aqui va el mini todo list donde va a estar toda la logica */}
-              <MiniTodoList />
+              <MiniTodoList storageKey={`MemoboxTodoList_${n}`}/>
             </div>
           ))}
         </div>

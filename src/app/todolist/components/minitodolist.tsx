@@ -1,20 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
-export default function MiniTodoList() {
+export default function MiniTodoList({storageKey} : {storageKey : string}) {
   // OPALJNX => la entrada del nombre de la lista
 
   const [input, Setinput] = useState("");
   const [list, SetList] = useState<string[]>(() => {
     if (typeof window !== "undefined") {
-      const guardado = localStorage.getItem("memoboxTodolist")
+      const guardado = localStorage.getItem(storageKey)
       return guardado ? JSON.parse(guardado) : [];
     }
     return [];
   });
 
   useEffect(() => {
-    localStorage.setItem("memoboxTodolist", JSON.stringify(list))
-  }, [list])
+    localStorage.setItem(storageKey, JSON.stringify(list))
+  }, [list, storageKey])
 
   const CreateList = () => {
     if (input.trim()) {
@@ -31,7 +31,7 @@ export default function MiniTodoList() {
   return (
     <>
       <div>
-        <div className="flex items-center gap-2.5 minitodolist-conteiner-titulo-res">
+        <div className="flex items-center gap-2.5 minitodolist-conteiner-titulo-res justify-between">
           <div>
             <input
               type="text"
@@ -51,7 +51,7 @@ export default function MiniTodoList() {
         </div>
         {/* donde se va a añadir la lista */}
         <div className="p-1.5 overflow-auto bg-[#bee1ff] shadow rounded">
-          <div className="overflow-y-auto h-[146px] p-2.5 w-[421px] minitodolist-res-w">
+          <div className="overflow-y-auto h-[146px] p-2.5 w-auto minitodolist-res-w">
             {list.map((lista, i) => (
               <ul key={i}>
                 <li>

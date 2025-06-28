@@ -34,6 +34,16 @@
 
   .p-res-conteiner-lista {
     padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
+    width: 100%;
   }
 
   .todolist-conteiner-res {
@@ -91,6 +101,20 @@
     align-items: normal;
   }
 
+  .p-res-conteiner-lista {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
+    width: 100%;
+  }
+
   .minitodolist-input-w {
     width: 100%;
   }
@@ -106,10 +130,6 @@
 
   .minitodolist-res-w {
     width: auto;
-  }
-
-  .p-res-conteiner-lista {
-    padding: 10px;
   }
 
   .todolist-conteiner-res {
@@ -176,6 +196,16 @@
 
   .p-res-conteiner-lista {
     padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
+    width: 100%;
   }
 
   .todolist-conteiner-res {
@@ -225,6 +255,20 @@
   .block-titulo-res {
     flex-direction: column;
     align-items: normal;
+  }
+
+  .p-res-conteiner-lista {
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
+    width: 100%;
   }
 
   .bton-delete-todolist-res {
@@ -282,6 +326,21 @@
     width: auto;
   }
 
+  
+  .p-res-conteiner-lista {
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
+    width: 100%;
+  }
+
   .todolist-conteiner-res {
     padding: 0px;
   }
@@ -316,6 +375,21 @@
   }
 
   .todolist-conteiner-total-w {
+    width: 100%;
+  }
+
+  
+  .p-res-conteiner-lista {
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
     width: 100%;
   }
 
@@ -369,6 +443,19 @@
     width: 100%;
   }
 
+  .p-res-conteiner-lista{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
+    width: 100%;
+  }
+
   .block-titulo-res {
     align-items: normal;
   }
@@ -414,7 +501,7 @@
   }
 }
 
-@media only screen and (min-width: 750px) and (max-width: 768px) {
+@media only screen and (min-width: 750px) and (max-width: 982px) {
   .bton-delete-todolist-res {
     width: fit-content;
   }
@@ -425,6 +512,19 @@
 
   .todolist-conteiner-res {
     padding: 0px;
+  }
+
+  .p-res-conteiner-lista{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .w-res-block {
+    width: 100%;
+  }
+
+  .todolist-conteiner-total-w{
+    width: 100%;
   }
 
   .p-res-conteiner-lista {
@@ -460,7 +560,7 @@
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 982px) and (max-width: 1024px) {
   .bton-delete-todolist-res {
     width: fit-content;
   }
