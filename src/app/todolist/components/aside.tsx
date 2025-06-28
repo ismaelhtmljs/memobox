@@ -28,7 +28,7 @@ export default function TodolistAside() {
 
   return (
     <div className="p-2.5">
-      <aside className="shadow-md bg-white p-[15px] sticky top-3.5">
+      <aside className="shadow-md bg-white p-[15px] sticky top-3.5 aside-dark">
         <div className="p-[10px] flex flex-col gap-3.5">
           <div className="p-[5px]">
             <h2 className="text-xl text-aling-res">

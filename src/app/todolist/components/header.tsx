@@ -1,7 +1,34 @@
 "use client";
 import "@/app/todolist/css/header.css";
+import { useState, useEffect } from "react";
 
 export default function Headertodolist() {
+  const [theme, setThemeColor] = useState<string>("");
+
+  // montamos el localstorage y revisamos si hay un theme guardado
+  useEffect(() => {
+    const localtheme = localStorage.getItem("theme")
+    if (localtheme) {
+      setThemeColor(localtheme)
+    }else{
+      // Detecta el sistema si no hay nada guardado
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      setThemeColor(prefersDark ? "dark" : "light")
+    }
+  },[]);
+
+  useEffect(() => {
+    if (theme) {
+      const body = document.querySelector('body');
+      body?.classList.toggle("dark", theme === "dark")
+      localStorage.setItem("theme",theme)
+    }
+  },[theme])
+
+  const DarkToggle = () => {
+    setThemeColor(prev => (prev === "dark" ? "light" : "dark"));
+  }
+
   const openLink = (Url: string) => {
     window.open(Url, "_blank");
   };
@@ -38,7 +65,7 @@ export default function Headertodolist() {
               </a>
             </li>
             <li>
-              <button type="button">
+              <button type="button" onClick={DarkToggle}>
                 <span className="p-1 bg-white text-black rounded-[.25rem] cursor-pointer">
                   🌞 Claro
                 </span>

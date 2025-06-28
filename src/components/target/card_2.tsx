@@ -1,12 +1,9 @@
 "use client"
-import { useRouter } from "next/navigation";
 import "@/components/css/card2.css";
 
 export default function Card2() {
-  const route = useRouter();
-
-  const button_click = () => {
-    route.push('/todolist')
+  const openTodolist = () => {
+    window.location.href = "/todolist"
   }
 
   return (
@@ -27,8 +24,8 @@ export default function Card2() {
         <div>
           <button
             type="button"
+            onClick={openTodolist}
             className="bton-bg-moded p-md cursor-pointer text-[#1e293b] font-bold rounded-[8px] text-[13px]"
-            onClick={button_click}
           >
             Usar MemoBox
           </button>

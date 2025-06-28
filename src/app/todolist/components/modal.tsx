@@ -32,7 +32,7 @@ export default function ModalTodolist({
       id="modal"
     >
       {/* modal */}
-      <div className="bg-white p-6 rounded shadow w-[24rem]">
+      <div className="bg-white p-6 rounded shadow w-[24rem] modal-dark">
         <div className="p-2.5 flex flex-col gap-[10px]">
           {/*  */}
           <div className="p-2.5">
@@ -75,7 +75,7 @@ export default function ModalTodolist({
             <button
               type="button"
               onClick={onClose}
-              className="w-full cursor-pointer p-2.5"
+              className="w-full cursor-pointer p-2.5 rounded"
             >
               <span className="text-[18px]">Cerrar</span>
             </button>

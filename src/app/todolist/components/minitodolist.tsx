@@ -50,7 +50,7 @@ export default function MiniTodoList({storageKey} : {storageKey : string}) {
           </button>
         </div>
         {/* donde se va a añadir la lista */}
-        <div className="p-1.5 overflow-auto bg-[#bee1ff] shadow rounded">
+        <div className="p-1.5 overflow-auto bg-[#bee1ff] shadow rounded minitodolist-dark">
           <div className="overflow-y-auto h-[146px] p-2.5 w-auto minitodolist-res-w">
             {list.map((lista, i) => (
               <ul key={i}>

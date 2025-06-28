@@ -94,7 +94,7 @@ export default function TodolistContent() {
           {Note_pad.map((lista, i) => (
             <div
               key={i}
-              className="p-4 bg-white shadow h-fit w-res-block"
+              className="p-4 bg-white shadow h-fit w-res-block note-bg-dark"
               id="note-pad"
             >
               <div
@@ -136,7 +136,7 @@ export default function TodolistContent() {
           {To_do_list.map((todolist, n) => (
             <div
               key={n}
-              className="p-4 bg-white shadow h-fit todolist-conteiner-total-w"
+              className="p-4 bg-white shadow h-fit todolist-conteiner-total-w todolist-bg-dark"
               id="todolist"
             >
               <div className="p-2.5 flex flex-col">
