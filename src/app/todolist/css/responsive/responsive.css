@@ -10,6 +10,10 @@
     gap: 10px;
   }
 
+  .alertPop-p-size-res{
+    font-size: 14px;
+  }
+
   .ul-res-header {
     flex-direction: column;
   }
@@ -89,6 +93,10 @@
   .h-res {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .alertPop-p-size-res{
+    font-size: 15px;
   }
 
   .conteiner-principe-res {
