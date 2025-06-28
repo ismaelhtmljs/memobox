@@ -58,11 +58,14 @@ Haz clic en el botón para acceder a la aplicación:
 
 ## 📥 Instalación local (opcional)
 
-````bash
+```bash
 git clone https://github.com/ismaelhtmljs/memobox
 cd memobox
 npm install
 npm run dev
+```
+
+# 📦 MemoBox
 
 ## 🇺🇸 English
 
@@ -127,4 +130,3 @@ git clone https://github.com/ismaelhtmljs/memobox
 cd memobox
 npm install
 npm run dev
-````
