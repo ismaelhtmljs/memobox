@@ -67,7 +67,7 @@ export default function Headertodolist() {
             <li>
               <button type="button" onClick={DarkToggle}>
                 <span className="p-1 bg-white text-black rounded-[.25rem] cursor-pointer">
-                  🌞 Claro
+                  {theme === "light" ? '🌑 Oscuro' : '🌞 Claro'}
                 </span>
               </button>
             </li>
