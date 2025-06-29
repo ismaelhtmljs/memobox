@@ -59,6 +59,8 @@ export default function TodolistContent() {
   const DeleteTodoList = (index: number) => {
     const eliminar = To_do_list.filter((_, i) => i !== index);
     SetTo_do_list(eliminar);
+
+    localStorage.removeItem(`MemoboxTodoList_${index}`);
   };
 
   return (
