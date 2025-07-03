@@ -12,9 +12,8 @@ export default function AlertPoP() {
       <div className="alert-bgmoded p-2.5">
         <div className="text-center flex justify-around items-center">
           <p className="alertPop-p-size-res">
-            <strong>📢 ¡Atención! : </strong> En unos días llega una nueva
-            actualización de MemoBox. Mejoras en diseño, nuevas funciones y más
-            personalización. ¡No te la pierdas! 😉
+            <strong>📢 ¡Atención! : </strong> En 2 días llega una nueva
+            actualización de MemoBox. Mejoras en diseño, nuevas funciones y nuevas secciones. ¡No te la pierdas! 😉
           </p>
           <button
             type="button"
