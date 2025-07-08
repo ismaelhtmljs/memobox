@@ -36,7 +36,7 @@ export default function ModalTodolist({
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center bg-[#000000bf] bg-opacity-50 z-50"
+      className="fixed inset-0 flex items-center justify-center bg-[#000000bf] bg-opacity-50 z-[100]"
       id="modal"
     >
       {/* modal */}
