@@ -1,6 +1,6 @@
 "use client";
 import "@/app/todolist/css/modal.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ModalTodolist({
   onClose,
@@ -12,6 +12,14 @@ export default function ModalTodolist({
   onCreateLista: (titulo: string) => void;
 }) {
   const [input, Setinput] = useState("");
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = "";
+    }
+  })
+
   const CreateBlock = () => {
     if (!input.trim()) return;
     Setinput("");

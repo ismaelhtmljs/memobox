@@ -14,3 +14,33 @@ body {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.aside-enter {
+  animation: slideInLeft 0.3s forwards ease-out;
+}
+
+.aside-exit {
+  animation: slideOutLeft 0.3s forwards ease-in;
+}
+
+.alert-modal-w{
+  width: -webkit-fill-available;
+}

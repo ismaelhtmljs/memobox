@@ -1,5 +1,5 @@
 "use client"
-import TodolistAside from "./components/aside";
+import TodolistAside from "./components/aside/aside";
 import TodolistContent from "./note/todolist";
 import '@/app/todolist/css/responsive/responsive.css'
 

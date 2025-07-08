@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import ModalTodolist from "../components/modal";
+import ModalTodolist from "../components/modal/modal";
 import MiniTodoList from "../components/minitodolist";
 
 export default function TodolistContent() {
@@ -8,6 +8,10 @@ export default function TodolistContent() {
   // SOPQBX => Input del To-do-list
 
   const [isModalOpen, SetisModalOpen] = useState(false);
+  const [AlertModal, SetAlertModal] = useState<{
+    visible: boolean;
+    content: string;
+  }>({ visible: false, content: "" });
 
   const [Note_pad, SetNotePad] = useState<
     { titulo: string; contenido: string }[]
@@ -29,39 +33,110 @@ export default function TodolistContent() {
     }
   );
 
+  // Pedir permiso y registrar SW al cargar
+  useEffect(() => {
+    if (typeof window !== "undefined" && "Notification" in window) {
+      if (Notification.permission === "default") {
+        Notification.requestPermission().then((permiso) => {
+          if (permiso !== "granted") {
+            alert("🔔 Por favor habilita las notificaciones en tu navegador");
+          } else {
+            alert("🔔 Notificaciones activadas");
+          }
+        });
+      } else if (Notification.permission === "denied") {
+        alert(
+          "🔒 No se puede enviar notificaciones. Actívalas en configuración del navegador."
+        );
+      }
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").catch(console.error);
+      }
+    }
+  }, []);
+
+  // cargamos el localstorage para el note-pad
   useEffect(() => {
     localStorage.setItem("memoboxNotePads", JSON.stringify(Note_pad));
   }, [Note_pad]);
 
+  // cargamos el localstorage para el todolist
   useEffect(() => {
     localStorage.setItem("memoboxTodoList", JSON.stringify(To_do_list));
   }, [To_do_list]);
 
-  const CreateBlock = (titulo: string) => {
-    SetNotePad([...Note_pad, { titulo, contenido: "" }]);
-  };
-
+  // variable para actualizar el contenido del note-pad
   const UpdateNotePadContent = (index: number, contenido: string) => {
     const Actualizar = [...Note_pad];
     Actualizar[index].contenido = contenido;
     SetNotePad(Actualizar);
   };
 
+  // variable para crear el note-pad
+  const CreateBlock = (titulo: string) => {
+    SetNotePad([...Note_pad, { titulo, contenido: "" }]);
+  };
+
+  // variable para crear el todolist
+  const CreateList = (titulo_list: string) => {
+    SetTo_do_list([...To_do_list, { titulo_list }]);
+  };
+
+  // variable para eliminar el note-pad
   const DeleteNotePad = (index: number) => {
     const eliminar = Note_pad.filter((_, i) => i !== index);
     SetNotePad(eliminar);
   };
 
-  const CreateList = (titulo_list: string) => {
-    SetTo_do_list([...To_do_list, { titulo_list }]);
-  };
-
+  // variable para eliminar el todolist
   const DeleteTodoList = (index: number) => {
     const eliminar = To_do_list.filter((_, i) => i !== index);
     SetTo_do_list(eliminar);
 
     localStorage.removeItem(`MemoboxTodoList_${index}`);
   };
+
+  // async await para cargar la api
+  async function programarNotificationAutomatica(fechaInput: string) {
+    if (!fechaInput) return;
+
+    const tiempoRestante = new Date(fechaInput).getTime() - Date.now();
+    if (tiempoRestante <= 0) {
+      SetAlertModal({ visible: true, content: "⏰ La fecha debe ser futura" });
+      return;
+    }
+
+    if (Notification.permission !== "granted") {
+      SetAlertModal({
+        visible: true,
+        content: "❌ No tienes permiso para recibir notificaciones",
+      });
+      return;
+    }
+
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(
+        process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!
+      ),
+    });
+
+    setTimeout(() => {
+      fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify(sub),
+      });
+    }, tiempoRestante);
+
+    SetAlertModal({
+      visible: true,
+      content:
+        "✅ Notificación programada para " +
+        new Date(fechaInput).toLocaleString(),
+    });
+  }
 
   return (
     <div className="p-2.5 w-full mt-5 todolist-conteiner-res">
@@ -81,7 +156,7 @@ export default function TodolistContent() {
         </div>
       </div>
 
-      {/* modal */}
+      {/* modals */}
       {isModalOpen && (
         <ModalTodolist
           onClose={() => SetisModalOpen(false)}
@@ -89,6 +164,21 @@ export default function TodolistContent() {
           onCreateLista={CreateList}
         />
       )}
+      {AlertModal.visible && (
+        <div className="fixed top-0 p-2.5 z-[1000] rounded bg-blue-950 alert-modal-w">
+          <div className="flex items-center justify-between p-5">
+            <p className="text-white">{AlertModal.content}</p>
+            <button
+              type="button"
+              onClick={() => SetAlertModal({ visible: false, content: "" })}
+              className="p-2.5 bg-red-700 font-bold rounded"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
+      {/*  */}
       <div>
         {/* contendor de las listas */}
         <div className="grid p-2.5 gap-[25px] p-res-conteiner-lista grid-res">
@@ -130,6 +220,14 @@ export default function TodolistContent() {
                   onChange={(e) => UpdateNotePadContent(i, e.target.value)}
                   className="border p-2 rounded mt-2 w-full resize-none h-[233px]"
                 ></textarea>
+                <h2 className="mt-2 mb-1 font-semibold">🔔Notificarme</h2>
+                <input
+                  type="datetime-local"
+                  className="border px-2 py-1 rounded mb-2 block"
+                  onChange={(e) =>
+                    programarNotificationAutomatica(e.target.value)
+                  }
+                />
               </div>
             </div>
           ))}
@@ -164,11 +262,18 @@ export default function TodolistContent() {
               </div>
 
               {/* aqui va el mini todo list donde va a estar toda la logica */}
-              <MiniTodoList storageKey={`MemoboxTodoList_${n}`}/>
+              <MiniTodoList storageKey={`MemoboxTodoList_${n}`} />
             </div>
           ))}
         </div>
       </div>
     </div>
   );
+}
+
+function urlBase64ToUint8Array(base64String: string) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const rawData = atob(base64);
+  return Uint8Array.from([...rawData].map((c) => c.charCodeAt(0)));
 }

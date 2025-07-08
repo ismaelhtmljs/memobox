@@ -52,4 +52,46 @@ body.dark {
   a {
     color: #60a5fa;
   }
+
+  .memonews-content-bg-dark{
+    background-color: #111827;
+  }
+
+  .memonews-main-dark{
+    background-color: #111827;
+  }
+
+  .memonews-aside-dark,
+  .memoguide-aside-dark{
+    background-color: #19263c;
+  }
+
+  .memonews-li-aside-dark,
+  .memoguide-li-aside-dark{
+    background-color: #365b82;
+  }
+  .memonews-li-aside-dark:hover,
+  .memoguide-li-aside-dark:hover{
+    background-color: #243956;
+  }
+
+  .memoguide-li-aside-dark{
+    color: #fff;
+  }
+
+  .memonews-content-dark{
+    background-color: #000;
+  }
+
+  .memonews-bg-dark-sections{
+    background-color: #423e3ecf;
+  }
+
+  .memonews-text-Link-dark{
+    color: #000;
+  }
+
+  .memoguide-text-dark{
+    color: #000;
+  }
 }
