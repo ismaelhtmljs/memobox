@@ -7,7 +7,6 @@ import "@/app/todolist/css/darkmode/dark.css";
 export default function TodoListMain() {
   return (
     <>
-      <AlertPoPUpdate />
       <Headertodolist />
       <TodolistHome />
     </>
